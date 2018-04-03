@@ -1,0 +1,31 @@
+body{
+	text-align: center;
+}
+
+p, a, h1, h2{
+	font-family: "Concert One", cursive;
+}
+
+h1{
+	font-size: 400%;
+}
+
+h2{
+	font-size: 300%;
+}
+
+button{
+	font-size: 300%;
+	height: 50px;
+	width: 75px;
+}
+
+#buttonDiv{
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+#timerDisplay{
+	padding-top: 30px;
+	font-size: 350%
+}
