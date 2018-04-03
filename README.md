@@ -4,13 +4,11 @@
 
 **Features**
 
-* *nothing yet...*
+* Basic timer
 
 **Coming Soon...**
 
 * TNoodle scrambles
-
-* Timer
 
 * Practise drill of the day
 
