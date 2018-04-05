@@ -2,7 +2,7 @@ body{
 	text-align: center;
 }
 
-p, a, h1, h2{
+p, a, h1, h2, h6{
 	font-family: "Concert One", cursive;
 }
 
@@ -12,6 +12,10 @@ h1{
 
 h2{
 	font-size: 300%;
+}
+
+h6{
+	font-size: 75%;
 }
 
 button{

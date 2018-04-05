@@ -4,7 +4,7 @@ var isOn = false;
 var output = document.getElementById("timerDisplay");
 var timeSplit;
 var spaceStarts = true;
-var basicSplt;
+var seconds;
 
 
 startBtn.addEventListener("click", function(){
