@@ -6,8 +6,45 @@ var timeSplit;
 var spaceStarts = true;
 var seconds;
 
+function update(){
+	rawTime += 0.01
+	cleanTime = clean(rawTime.toString());
+	//console.log(cleanTime);
+	output.innerHTML = cleanTime;
+}
 
-startBtn.addEventListener("click", function(){
+function start(){
+	output.innerHTML = "0.00";
+	rawTime = 0;
+	isOn = true;
+	startBtn.innerHTML = "stop";
+	interval = setInterval(update, 10);
+}
+
+while (isOn){
+	update();
+}
+
+function stop(){
+	clearInterval(interval);
+	isOn = false;
+	startBtn.innerHTML = "start";
+}
+
+function clean(time){
+	timeSplit = time.split("");
+	var num = Number(timeSplit.join().replace(/,/g, ""));
+	var secs = Math.round(num * 1) / 1;
+	var mins = Math.floor(secs / 60);
+	secs = secs - mins * 60;
+	if(mins > 0){
+		return mins + ":" + (Math.round(((Math.round(num * 100) / 100) % 1) * 100) / 100 + secs);
+	}else{
+		return Math.round(num * 100) / 100;
+	}
+}
+
+startBtn.addEventListener('click', function(){
 	if (isOn){
 		stop();
 	}else{
@@ -15,18 +52,14 @@ startBtn.addEventListener("click", function(){
 	}
 });
 
-document.body.onkeyup = function(e){
+/*document.body.onkeyup = function(e){
 	if(e.keyCode == 32){
-		if (spaceStarts == true){
-			start();
-			spaceStarts = false;
-		}else{
+		if (isOn){
 			stop();
-			spaceStarts = true;
+			console.log('stopping');
+		}else{
+			start();
+			console.log('starting');
 		}
 	}
-}
-
-while (isOn){
-	update();
-}
+}*/
