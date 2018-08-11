@@ -5,11 +5,20 @@ var output = document.getElementById("timerDisplay");
 var timeSplit;
 var spaceStarts = true;
 var seconds;
+var savedTimes = [];
+
+function saveTime(time){
+	if (typeof(Storage) !== "undefined") {
+		savedTimes.push(JSON.stringify(time));
+		localStorage.times = savedTimes;
+	} else {
+		console.log("Sorry, your browser does not support Web Storage...");
+	}
+}
 
 function update(){
 	rawTime += 0.01
 	cleanTime = clean(rawTime.toString(), 1);
-	//console.log(cleanTime);
 	output.innerHTML = cleanTime;
 }
 
@@ -37,11 +46,13 @@ function stop(){
 		result = "0.00";
 	}else{
 		result = final;
+		saveTime(result);
 	}
 	output.innerHTML = result;
 	clearInterval(interval);
 	isOn = false;
 	startBtn.innerHTML = "start";
+	saveTime(result);
 }
 
 function clean(time, points){
