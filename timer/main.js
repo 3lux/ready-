@@ -6,10 +6,17 @@ var timeSplit;
 var spaceStarts = true;
 var seconds;
 
+function saveTime(time){
+	if (typeof(Storage) !== "undefined") {
+		localStorage.times = JSON.stringify(time);
+	} else {
+		console.log("Sorry, your browser does not support Web Storage...");
+	}
+}
+
 function update(){
 	rawTime += 0.01
 	cleanTime = clean(rawTime.toString(), 1);
-	//console.log(cleanTime);
 	output.innerHTML = cleanTime;
 }
 
@@ -37,11 +44,13 @@ function stop(){
 		result = "0.00";
 	}else{
 		result = final;
+		saveTime(result);
 	}
 	output.innerHTML = result;
 	clearInterval(interval);
 	isOn = false;
 	startBtn.innerHTML = "start";
+	saveTime(result);
 }
 
 function clean(time, points){

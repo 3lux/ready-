@@ -12,9 +12,5 @@
 
 * Practise drill of the day
 
-* In-game currency
-
-* Shop for incentives(themes etc.)
-
 * And lots more
 
