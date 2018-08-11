@@ -1,6 +1,6 @@
 # ready?
 
-*ready?* is a program to keep cubers motivated. It's a gamified timer with elements from games to make practise more fun.
+*ready?* is a program to keep cubers motivated. It's a gamified timer designed to make practise more fun.
 
 **Features**
 

@@ -5,10 +5,12 @@ var output = document.getElementById("timerDisplay");
 var timeSplit;
 var spaceStarts = true;
 var seconds;
+var savedTimes = [];
 
 function saveTime(time){
 	if (typeof(Storage) !== "undefined") {
-		localStorage.times = JSON.stringify(time);
+		savedTimes.push(JSON.stringify(time));
+		localStorage.times = savedTimes;
 	} else {
 		console.log("Sorry, your browser does not support Web Storage...");
 	}
